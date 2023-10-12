@@ -37,6 +37,9 @@ jobs:
           fileName: "element-v1.11.46.tar.gz"
           extract: true
 
+      - name: Delete the production directory if it already exists
+        run: if [ -d production ]; then rm -rf production; fi
+
       - name: Rename the element build directory to production
         run: mv element-v1.11.46 production
 
